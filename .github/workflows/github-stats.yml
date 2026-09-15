@@ -1,0 +1,50 @@
+# Generates a static GitHub stats SVG into assets/github-stats.svg.
+# Avoids github-readme-stats.vercel.app, which is paused and 503s through Camo.
+name: Sync GitHub stats
+
+on:
+  schedule:
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/github-stats.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-stats-card
+  cancel-in-progress: true
+
+jobs:
+  update-stats:
+    name: Render stats card
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Generate stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          path: assets/github-stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: "true"
+          options: username=${{ github.repository_owner }}&show_icons=true&hide_rank=true&hide_border=false&bg_color=090d16&title_color=f4f4f5&text_color=a1a1aa&icon_color=71717a&border_color=27272a
+
+      - name: Commit stats card
+        run: |
+          git add -- assets/github-stats.svg
+          if git diff --staged --quiet; then
+            echo "Stats card unchanged."
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "docs(readme): refresh GitHub stats card"
+          git push

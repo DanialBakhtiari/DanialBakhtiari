@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-labelledby="title desc">
+  <title id="title">Danial Bakhtiari's GitHub Stats</title>
+  <desc id="desc">Public GitHub activity for DanialBakhtiari</desc>
+  <style>
+    .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f4f4f5; }
+    .label { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a1a1aa; }
+    .value { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #f4f4f5; }
+    .icon { fill: none; stroke: #71717a; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <rect x="0.5" y="0.5" width="494" height="194" rx="4.5" fill="#090d16" stroke="#27272a"/>
+  <text class="title" x="25" y="32">Danial Bakhtiari's GitHub Stats</text>
+
+  <g transform="translate(25 48)">
+    <path class="icon" d="M8 1.5l1.76 3.56 3.93.57-2.84 2.77.67 3.91L8 10.46 4.48 12.31l.67-3.91L2.31 5.63l3.93-.57z"/>
+    <text class="label" x="24" y="12">Total Stars</text>
+    <text class="value" x="445" y="12" text-anchor="end">4</text>
+  </g>
+  <g transform="translate(25 73)">
+    <circle class="icon" cx="8" cy="8" r="5.2"/>
+    <path class="icon" d="M8 5.2V8l2 1.4"/>
+    <text class="label" x="24" y="12">Total Commits</text>
+    <text class="value" x="445" y="12" text-anchor="end">279</text>
+  </g>
+  <g transform="translate(25 98)">
+    <circle class="icon" cx="5" cy="5" r="2.2"/>
+    <circle class="icon" cx="11" cy="11" r="2.2"/>
+    <path class="icon" d="M7 5h2.2a2 2 0 0 1 2 2V9"/>
+    <path class="icon" d="M5.5 7v2.2A2 2 0 0 0 7.5 11H9"/>
+    <text class="label" x="24" y="12">Total PRs</text>
+    <text class="value" x="445" y="12" text-anchor="end">1</text>
+  </g>
+  <g transform="translate(25 123)">
+    <circle class="icon" cx="8" cy="8" r="5.2"/>
+    <path class="icon" d="M8 5.4v3.1"/>
+    <circle class="icon" cx="8" cy="11.1" r="0.6" fill="#71717a" stroke="none"/>
+    <text class="label" x="24" y="12">Total Issues</text>
+    <text class="value" x="445" y="12" text-anchor="end">0</text>
+  </g>
+  <g transform="translate(25 148)">
+    <rect class="icon" x="3" y="4" width="10" height="8" rx="1.2"/>
+    <path class="icon" d="M6 4V3.2A1.2 1.2 0 0 1 7.2 2h1.6A1.2 1.2 0 0 1 10 3.2V4"/>
+    <text class="label" x="24" y="12">Contributed to</text>
+    <text class="value" x="445" y="12" text-anchor="end">13</text>
+  </g>
+</svg>

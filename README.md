@@ -75,7 +75,9 @@ Containerized runtimes, CI/CD that refuses unverified work, and linting/typing a
 ## Metrics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=DanialBakhtiari&amp;show_icons=true&amp;hide_rank=true&amp;hide_border=false&amp;bg_color=090d16&amp;title_color=f4f4f5&amp;text_color=a1a1aa&amp;icon_color=71717a&amp;border_color=27272a&amp;cache_seconds=86400" alt="GitHub metrics for DanialBakhtiari" width="420" />
+  <a href="https://github.com/DanialBakhtiari">
+    <img src="./assets/github-stats.svg" alt="GitHub metrics for DanialBakhtiari" width="420" />
+  </a>
 </p>
 
 ## Writing
