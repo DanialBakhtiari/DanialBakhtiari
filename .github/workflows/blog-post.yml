@@ -1,0 +1,63 @@
+# Injects the latest posts from the personal blog RSS feed into README.md
+# between BLOG-POST-LIST markers. Set repository variable BLOG_RSS_URL
+# (Settings → Secrets and variables → Actions → Variables), or pass
+# feed_url when running the workflow manually.
+name: Sync blog posts
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      feed_url:
+        description: "Override RSS/Atom feed URL for this run"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-post-readme
+  cancel-in-progress: true
+
+jobs:
+  update-readme:
+    name: Update README writing feed
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Require RSS feed URL
+        if: ${{ !github.event.inputs.feed_url && !vars.BLOG_RSS_URL }}
+        run: |
+          echo "::error::Set repository variable BLOG_RSS_URL, or pass feed_url on workflow_dispatch."
+          exit 1
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Sync posts into README
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          readme_path: ./README.md
+          comment_tag_name: BLOG-POST-LIST
+          feed_list: ${{ github.event.inputs.feed_url || vars.BLOG_RSS_URL }}
+          max_post_count: "5"
+          sort_order: desc
+          remove_duplicates: "true"
+          title_max_length: "72"
+          date_format: "UTC:yyyy-mm-dd"
+          template: "- [$title]($url) · `$date`"
+          tag_post_pre_newline: "true"
+          retry_count: "3"
+          retry_wait_time: "10"
+          user_agent: "Mozilla/5.0 (compatible; GitHubProfileReadme/1.0; +https://github.com)"
+          accept_header: "application/rss+xml, application/atom+xml, application/xml;q=0.9, */*;q=0.8"
+          enable_keepalive: "true"
+          commit_message: "docs(readme): sync latest writing"
+          dummy_commit_message: "chore: keepalive scheduled blog sync"
+          committer_username: github-actions[bot]
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com

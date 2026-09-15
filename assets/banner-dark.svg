@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Architecture schematic">
+  <defs>
+    <style>
+      .t { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    </style>
+    <pattern id="grid-dark" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#27272a" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" fill="#090d16"/>
+  <rect x="16" y="16" width="1168" height="288" fill="none" stroke="#27272a" stroke-width="1"/>
+  <rect x="22" y="22" width="1156" height="276" fill="url(#grid-dark)" opacity="0.45"/>
+  <rect x="22" y="22" width="1156" height="276" fill="none" stroke="#18181b" stroke-width="1"/>
+
+  <g fill="none" stroke="#52525b" stroke-width="1">
+    <path d="M22 42H38M30 34V50"/>
+    <path d="M1178 42H1162M1170 34V50"/>
+    <path d="M22 278H38M30 270V286"/>
+    <path d="M1178 278H1162M1170 270V286"/>
+  </g>
+
+  <rect x="22" y="22" width="1156" height="28" fill="#090d16" stroke="#18181b" stroke-width="1"/>
+  <text class="t" x="40" y="41" fill="#71717a" font-size="10">FILE  README.SYS</text>
+  <text class="t" x="600" y="41" fill="#a1a1aa" font-size="10" text-anchor="middle">DISTRIBUTED SYSTEMS  /  CONTROL PLANE</text>
+  <text class="t" x="1158" y="41" fill="#71717a" font-size="10" text-anchor="end">SHEET 01 / 01</text>
+
+  <g transform="translate(40 108) scale(1.2)">
+    <rect x="4" y="4" width="56" height="56" rx="15" fill="none" stroke="#fafafa" stroke-opacity="0.28" stroke-width="3"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="#fafafa" d="M19 13H30A15 15 0 0 1 30 43H19Z M26 20H30A8 8 0 0 1 30 36H26Z"/>
+    <rect x="19" y="47" width="26" height="4" rx="2" fill="#a1a1aa"/>
+  </g>
+
+  <text class="t" x="132" y="132" fill="#71717a" font-size="10">DRW  04-ARCH</text>
+  <text class="t" x="132" y="158" fill="#f4f4f5" font-size="22">ARCHITECTURE</text>
+  <text class="t" x="132" y="178" fill="#a1a1aa" font-size="11">EDGE  /  SERVICES  /  DATA</text>
+  <line x1="132" y1="192" x2="360" y2="192" stroke="#27272a" stroke-width="1"/>
+  <text class="t" x="132" y="214" fill="#71717a" font-size="10">REV  07</text>
+  <text class="t" x="132" y="230" fill="#71717a" font-size="10">SCALE  1 : 1</text>
+  <text class="t" x="132" y="246" fill="#71717a" font-size="10">STATUS  PRODUCTION</text>
+
+  <line x1="392" y1="58" x2="392" y2="286" stroke="#27272a" stroke-width="1"/>
+
+  <g fill="none" stroke="#3f3f46" stroke-width="1">
+    <path d="M580 109H640"/>
+    <path d="M780 109H840"/>
+    <path d="M580 205H640"/>
+    <path d="M780 205H840"/>
+    <path d="M510 126V188"/>
+    <path d="M710 126V188"/>
+    <path d="M910 126V188"/>
+  </g>
+
+  <g class="t" font-size="10" text-anchor="middle">
+    <rect x="440" y="92" width="140" height="34" fill="#18181b" stroke="#3f3f46"/>
+    <text x="510" y="113" fill="#e4e4e7">EDGE</text>
+    <rect x="640" y="92" width="140" height="34" fill="#18181b" stroke="#3f3f46"/>
+    <text x="710" y="113" fill="#e4e4e7">GATEWAY</text>
+    <rect x="840" y="92" width="140" height="34" fill="#18181b" stroke="#3f3f46"/>
+    <text x="910" y="113" fill="#e4e4e7">WORKERS</text>
+    <rect x="440" y="188" width="140" height="34" fill="#18181b" stroke="#3f3f46"/>
+    <text x="510" y="209" fill="#e4e4e7">INGRESS</text>
+    <rect x="640" y="188" width="140" height="34" fill="#090d16" stroke="#52525b"/>
+    <text x="710" y="209" fill="#f4f4f5">EVENT BUS</text>
+    <rect x="840" y="188" width="140" height="34" fill="#18181b" stroke="#3f3f46"/>
+    <text x="910" y="209" fill="#e4e4e7">DATA</text>
+  </g>
+
+  <g fill="#71717a">
+    <circle cx="510" cy="109" r="2"/>
+    <circle cx="710" cy="109" r="2"/>
+    <circle cx="910" cy="109" r="2"/>
+    <circle cx="510" cy="205" r="2"/>
+    <circle cx="710" cy="205" r="2"/>
+    <circle cx="910" cy="205" r="2"/>
+  </g>
+
+  <rect x="22" y="278" width="1156" height="20" fill="#090d16"/>
+  <text class="t" x="40" y="292" fill="#52525b" font-size="9">PALETTE  #090D16  /  #18181B  /  #27272A</text>
+  <text class="t" x="1158" y="292" fill="#52525b" font-size="9" text-anchor="end">LAT  /  THRU  /  CONS</text>
+</svg>
